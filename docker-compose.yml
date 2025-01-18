@@ -5,7 +5,7 @@ version: "3"
 # The Visual Studio launch setting `Docker-regtest` is configured to use this environment.
 services:
   btcp:
-    image: hhanh00/btcp
+    image: btcpayserver/btcpayserver:1.13.7-altcoins
     environment:
       BTCPAY_LAUNCHSETTINGS: "false"
       BTCPAY_BIND: "0.0.0.0"
@@ -30,10 +30,11 @@ services:
     volumes:
     - "btcpay_datadir:/datadir"
   wallet:
-    image: hhanh00/zcash-walletd
+    image: 1337bytes/zcash-walletd
     environment:
       VK: zxviews1qwy5cttzqqqqpq8ksfmzqgz90r73yevcw6mvwuv5zuddak9zgl9epp6x308pczzezjkqnuu6780xu5g3wfjn8lghwpkh08rvtcg0pyk0ap7c0p63duvpu70uydrhtlw7jam4x6u4qtxaetfu4hkh6vxwrxue2xqgznkfntrqe0sv464uewwlglr0dzakssj8tdx27vq3dnerfa5z5fgf8vjutlcey3lwn4m6ncg8y4n2cgl64rd768uqg0yfvshljqt3g4x83kngv4g2fzx0z
-      BIRTH_HEIGHT: 1514933
+      LWD_URL: https://zec.rocks:443
+      BIRTH_HEIGHT: 2789576
     ports:
       - "8000:8000"
     volumes:
